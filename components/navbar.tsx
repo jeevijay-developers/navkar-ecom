@@ -31,10 +31,10 @@ export function Navbar() {
 
   return (
     <HeroUINavbar
-      maxWidth="full"
-      className="border-b border-accent/10 bg-white/98 backdrop-blur-lg shadow-sm fixed top-0 z-50"
+      maxWidth="2xl" 
+      className="border-b border-accent/10 bg-white/98 backdrop-blur-lg shadow-sm fixed top-0 z-50 py-3"
       shouldHideOnScroll={false}
-      height="4.5rem"
+      height="4rem"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
