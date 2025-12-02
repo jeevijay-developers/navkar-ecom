@@ -17,10 +17,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShoppingCart, Phone, Menu } from "lucide-react";
 import { useState } from "react";
+import { SearchBar } from "@/components/common/SearchBar";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Our Products", href: "/#products" },
+  { label: "Our Products", href: "/products" },
 ];
 
 export function Navbar() {
@@ -62,7 +63,6 @@ export function Navbar() {
         <span className="font-black text-2xl">NAVKAR</span>
         </Link>
       </NavbarBrand>
-
       {/* Center Nav Items */}
       <NavbarContent className="hidden md:flex gap-8" justify="center">
         {navItems.map((item) => (
@@ -82,6 +82,13 @@ export function Navbar() {
 
       {/* Right Side Actions */}
       <NavbarContent justify="end" className="gap-4">
+        {/* Search Bar - Desktop */}
+        <NavbarContent
+          className="hidden md:flex flex-1 max-w-md"
+          justify="center"
+        >
+          <SearchBar />
+        </NavbarContent>
         {/* Cart Icon with Badge */}
         <NavbarItem>
           <Badge
@@ -124,6 +131,11 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <NavbarMenu className="pt-6 bg-white/98 backdrop-blur-lg">
+        {/* Search Bar - Mobile */}
+        <div className="px-4 pb-4 border-b border-accent/10">
+          <SearchBar />
+        </div>
+
         {navItems.map((item, index) => (
           <NavbarMenuItem key={item.href}>
             <HeroUILink

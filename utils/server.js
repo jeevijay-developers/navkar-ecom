@@ -45,6 +45,17 @@ export const productAPI = {
   },
 
   /**
+   * Search products by keyword
+   */
+  searchProducts: async (query, limit = 5) => {
+    const params = new URLSearchParams({
+      q: query,
+      limit: limit.toString(),
+    });
+    return apiRequest(`/products/search?${params}`);
+  },
+
+  /**
    * Get product by ID
    */
   getProductById: async (id) => {
