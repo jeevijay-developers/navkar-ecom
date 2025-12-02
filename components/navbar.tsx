@@ -12,11 +12,12 @@ import {
 import { Link as HeroUILink } from "@heroui/link";
 import { Button } from "@heroui/button";
 import { Badge } from "@heroui/badge";
-import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import Image from "next/image";
-import { ShoppingCart, Phone, Menu } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { useState } from "react";
+
+import { useCart } from "@/context/CartContext";
 import { SearchBar } from "@/components/common/SearchBar";
 
 const navItems = [
@@ -31,11 +32,11 @@ export function Navbar() {
 
   return (
     <HeroUINavbar
-      maxWidth="2xl" 
       className="border-b border-accent/10 bg-white/98 backdrop-blur-lg shadow-sm fixed top-0 z-50 py-3"
-      shouldHideOnScroll={false}
       height="4rem"
       isMenuOpen={isMenuOpen}
+      maxWidth="2xl"
+      shouldHideOnScroll={false}
       onMenuOpenChange={setIsMenuOpen}
     >
       {/* Mobile Menu Toggle */}
@@ -49,18 +50,18 @@ export function Navbar() {
       {/* Brand */}
       <NavbarBrand>
         <Link
-          href="/"
           className="font-black text-2xl md:text-3xl text-accent tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
+          href="/"
         >
           <Image
-            src="/navkarEcom.png"
-            alt="NAVKAR Logo"
-            width={70}
-            height={70}
-            className="object-contain"
             priority
+            alt="NAVKAR Logo"
+            className="object-contain"
+            height={70}
+            src="/navkarEcom.png"
+            width={70}
           />
-        <span className="font-black text-2xl">NAVKAR</span>
+          <span className="font-black text-2xl">NAVKAR</span>
         </Link>
       </NavbarBrand>
       {/* Center Nav Items */}
@@ -69,19 +70,19 @@ export function Navbar() {
           <NavbarItem key={item.href}>
             <HeroUILink
               as={Link}
-              href={item.href}
-              color="foreground"
               className="text-secondary-700 font-medium hover:text-accent transition-colors text-base relative group"
+              color="foreground"
+              href={item.href}
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
             </HeroUILink>
           </NavbarItem>
         ))}
       </NavbarContent>
 
       {/* Right Side Actions */}
-      <NavbarContent justify="end" className="gap-4">
+      <NavbarContent className="gap-4" justify="end">
         {/* Search Bar - Desktop */}
         <NavbarContent
           className="hidden md:flex flex-1 max-w-md"
@@ -92,23 +93,23 @@ export function Navbar() {
         {/* Cart Icon with Badge */}
         <NavbarItem>
           <Badge
-            content={cartCount > 99 ? "99+" : cartCount}
-            color="success"
-            placement="top-right"
-            size="sm"
-            isInvisible={cartCount === 0}
             classNames={{
               badge: "min-w-[18px] h-[18px] text-[8px] font-bold",
             }}
+            color="success"
+            content={cartCount > 99 ? "99+" : cartCount}
+            isInvisible={cartCount === 0}
+            placement="top-right"
+            size="sm"
           >
             <Button
-              as={Link}
-              href="/cart"
               isIconOnly
-              variant="light"
+              as={Link}
               className="text-accent hover:bg-accent/5"
-              size="md"
+              href="/cart"
               radius="sm"
+              size="md"
+              variant="light"
             >
               <ShoppingCart className="w-5 h-5" />
             </Button>
@@ -119,10 +120,10 @@ export function Navbar() {
         <NavbarItem className="hidden sm:flex">
           <Button
             as={Link}
-            href="/cart"
             className="bg-accent text-white font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg"
-            size="md"
+            href="/cart"
             radius="sm"
+            size="md"
           >
             Get Quote
           </Button>
@@ -140,8 +141,8 @@ export function Navbar() {
           <NavbarMenuItem key={item.href}>
             <HeroUILink
               as={Link}
-              href={item.href}
               className="w-full text-lg font-medium text-secondary-700 hover:text-accent py-3 border-b border-accent/10"
+              href={item.href}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
@@ -151,10 +152,10 @@ export function Navbar() {
         <NavbarMenuItem className="pt-4">
           <Button
             as={Link}
-            href="/cart"
             className="w-full bg-accent text-white font-semibold"
-            size="lg"
+            href="/cart"
             radius="sm"
+            size="lg"
             onClick={() => setIsMenuOpen(false)}
           >
             Get Quote

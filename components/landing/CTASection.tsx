@@ -2,7 +2,7 @@
 
 import { Button } from "@heroui/button";
 import Link from "next/link";
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 export default function CTASection() {
   return (
@@ -31,11 +31,11 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button
               as={Link}
-              href="/cart"
-              size="lg"
               className="bg-white text-accent font-bold hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all px-8"
-              radius="sm"
               endContent={<ArrowRight className="w-5 h-5" />}
+              href="/cart"
+              radius="sm"
+              size="lg"
             >
               Request Quotation
             </Button>
@@ -44,8 +44,8 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-white/20">
             s{" "}
             <a
-              href="mailto:info@navkar.com"
               className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+              href="mailto:info@navkar.com"
             >
               <Mail className="w-5 h-5" />
               <span className="font-medium">info@navkar.com</span>

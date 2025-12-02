@@ -6,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Search, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
 import { useDebounce } from "@/hooks/useDebounce";
 import { productAPI } from "@/utils/server";
 
@@ -35,6 +36,7 @@ export function SearchBar() {
       if (!debouncedSearchQuery.trim()) {
         setResults([]);
         setIsOpen(false);
+
         return;
       }
 
@@ -42,8 +44,9 @@ export function SearchBar() {
       try {
         const products = await productAPI.searchProducts(
           debouncedSearchQuery,
-          5
+          5,
         );
+
         setResults(products);
         setIsOpen(products.length > 0);
         setSelectedIndex(-1);
@@ -72,6 +75,7 @@ export function SearchBar() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
@@ -83,7 +87,7 @@ export function SearchBar() {
       case "ArrowDown":
         e.preventDefault();
         setSelectedIndex((prev) =>
-          prev < results.length - 1 ? prev + 1 : prev
+          prev < results.length - 1 ? prev + 1 : prev,
         );
         break;
       case "ArrowUp":
@@ -125,28 +129,7 @@ export function SearchBar() {
     <div ref={searchRef} className="relative w-full max-w-md">
       <Input
         ref={inputRef}
-        type="text"
-        placeholder="Search products..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        onKeyDown={handleKeyDown}
-        onFocus={() => {
-          if (results.length > 0) setIsOpen(true);
-        }}
-        startContent={
-          <Search className="w-4 h-4 text-secondary-400 flex-shrink-0" />
-        }
-        endContent={
-          searchQuery && (
-            <button
-              onClick={handleClearSearch}
-              className="text-secondary-400 transition-colors"
-              aria-label="Clear search"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )
-        }
+        aria-label="Search products"
         classNames={{
           base: "w-full",
           mainWrapper: "h-10",
@@ -154,7 +137,28 @@ export function SearchBar() {
           inputWrapper:
             "border border-secondary-200 !bg-white shadow-sm h-10 focus-within:!border-white",
         }}
-        aria-label="Search products"
+        endContent={
+          searchQuery && (
+            <button
+              aria-label="Clear search"
+              className="text-secondary-400 transition-colors"
+              onClick={handleClearSearch}
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )
+        }
+        placeholder="Search products..."
+        startContent={
+          <Search className="w-4 h-4 text-secondary-400 flex-shrink-0" />
+        }
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onFocus={() => {
+          if (results.length > 0) setIsOpen(true);
+        }}
+        onKeyDown={handleKeyDown}
       />
 
       {/* Search Results Dropdown */}
@@ -173,19 +177,19 @@ export function SearchBar() {
                 {results.map((product, index) => (
                   <Link
                     key={product._id}
-                    href={`/products/${product._id}`}
-                    onClick={handleResultClick}
                     className={`flex items-center gap-3 p-3 bg-white hover:bg-secondary-50 transition-colors ${
                       selectedIndex === index ? "!bg-accent/10" : ""
                     }`}
+                    href={`/products/${product._id}`}
+                    onClick={handleResultClick}
                   >
                     <div className="relative w-12 h-12 flex-shrink-0 rounded overflow-hidden bg-secondary-100">
                       <Image
-                        src={product.imageUrl}
-                        alt={product.name}
                         fill
+                        alt={product.name}
                         className="object-cover"
                         sizes="48px"
+                        src={product.imageUrl}
                       />
                     </div>
                     <div className="flex-1 min-w-0">

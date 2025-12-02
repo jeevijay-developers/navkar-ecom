@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@heroui/button";
-import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { ArrowRight, Factory, Shield, Truck, Headphones } from "lucide-react";
 
@@ -38,21 +37,21 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 as={Link}
-                href="#products"
-                size="lg"
                 className="bg-white text-accent font-bold hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all px-8"
-                radius="sm"
                 endContent={<ArrowRight className="w-5 h-5" />}
+                href="#products"
+                radius="sm"
+                size="lg"
               >
                 Browse Catalog
               </Button>
               <Button
                 as={Link}
+                className="border-2 border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-sm px-8"
                 href="/cart"
+                radius="sm"
                 size="lg"
                 variant="bordered"
-                className="border-2 border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-sm px-8"
-                radius="sm"
               >
                 Request Quote
               </Button>
@@ -82,7 +81,7 @@ export default function HeroSection() {
           {/* Hero Image/Visual */}
           <div className="hidden lg:flex justify-center items-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-white/10 rounded-3xl blur-3xl transform rotate-6"></div>
+              <div className="absolute inset-0 bg-white/10 rounded-3xl blur-3xl transform rotate-6" />
               <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/20 rounded-2xl p-6 text-center">
@@ -111,8 +110,8 @@ export default function HeroSection() {
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
-          viewBox="0 0 1440 120"
           fill="none"
+          viewBox="0 0 1440 120"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path

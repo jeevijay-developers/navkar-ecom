@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { productAPI } from "@/utils/server";
 import { Product } from "@/types";
 import AllProductsSection from "@/components/products/AllProductsSection";
@@ -16,10 +17,11 @@ export default function ProductsPage() {
         setLoading(true);
         setError(null);
         const data = await productAPI.getProducts();
+
         setProducts(data);
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : "Failed to load products"
+          err instanceof Error ? err.message : "Failed to load products",
         );
       } finally {
         setLoading(false);
@@ -31,7 +33,7 @@ export default function ProductsPage() {
 
   return (
     <div>
-      <AllProductsSection products={products} loading={loading} error={error} />
+      <AllProductsSection error={error} loading={loading} products={products} />
     </div>
   );
 }

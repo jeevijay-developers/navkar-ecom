@@ -1,9 +1,10 @@
 "use client";
 
-import { Skeleton } from "@heroui/skeleton";
 import { Alert } from "@heroui/alert";
-import { Product } from "@/types";
+
 import ProductGrid from "./ProductGrid";
+
+import { Product } from "@/types";
 
 interface AllProductsSectionProps {
   products: Product[];
@@ -43,10 +44,10 @@ export default function AllProductsSection({
       <section className="py-20 bg-secondary-50/30">
         <div className="container mx-auto px-6">
           <Alert
-            color="danger"
-            variant="flat"
             className="max-w-2xl mx-auto shadow-lg border border-red-200"
+            color="danger"
             radius="lg"
+            variant="flat"
           >
             <div className="space-y-2">
               <p className="font-bold text-lg">Error Loading Products</p>
@@ -71,7 +72,7 @@ export default function AllProductsSection({
           <p className="text-secondary-600 text-lg font-light max-w-2xl mx-auto">
             Browse our complete range of industrial packaging solutions
           </p>
-          <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-accent mx-auto mt-4" />
         </div>
         <ProductGrid products={products} />
       </div>

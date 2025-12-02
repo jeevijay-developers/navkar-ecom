@@ -4,10 +4,11 @@ import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Image } from "@heroui/image";
 import { Chip } from "@heroui/chip";
-import { Product } from "@/types";
-import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { ShoppingCart, ArrowRight, Plus, Minus } from "lucide-react";
+
+import { Product } from "@/types";
+import { useCart } from "@/context/CartContext";
 
 interface FeaturedProductsProps {
   products: Product[];
@@ -23,7 +24,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
   }
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section className="py-20 bg-white" id="products">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div className="space-y-4">
@@ -39,10 +40,10 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
           </div>
           <Button
             as={Link}
-            href="/products"
-            variant="light"
             className="text-accent font-semibold hover:bg-accent/5 self-start md:self-auto"
             endContent={<ArrowRight className="w-5 h-5" />}
+            href="/products"
+            variant="light"
           >
             View All Products
           </Button>
@@ -52,7 +53,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
           {featuredProducts.map((product) => {
             const inCart = isInCart(product._id);
             const cartItem = cart.find(
-              (item) => item.product._id === product._id
+              (item) => item.product._id === product._id,
             );
             const cartQuantity = cartItem?.quantity || 0;
 
@@ -65,12 +66,12 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 <CardBody className="p-0">
                   <div className="relative overflow-hidden bg-secondary-50 h-56">
                     <Image
-                      src={product.imageUrl}
                       alt={product.name}
-                      width="100%"
-                      height={224}
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300 p-4"
+                      height={224}
                       radius="none"
+                      src={product.imageUrl}
+                      width="100%"
                     />
                   </div>
                   <div className="p-6 space-y-4">
@@ -79,10 +80,10 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       <Chip
-                        size="sm"
-                        variant="flat"
                         className="bg-accent/5 text-accent border border-accent/20 font-medium text-xs"
                         radius="sm"
+                        size="sm"
+                        variant="flat"
                       >
                         {product.materialOfConstruction}
                       </Chip>
@@ -96,10 +97,10 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                     <div className="flex gap-2 pt-2">
                       <Button
                         as={Link}
-                        href={`/products/${product._id}`}
                         className="flex-1 bg-accent text-white font-semibold hover:bg-accent/90 transition-all"
-                        size="sm"
+                        href={`/products/${product._id}`}
                         radius="sm"
+                        size="sm"
                       >
                         View Details
                       </Button>
@@ -108,8 +109,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                           <Button
                             isIconOnly
                             className="bg-transparent text-gray-600 hover:bg-gray-50 min-w-[32px] h-[32px] rounded-none border-r border-gray-200"
-                            size="sm"
                             radius="none"
+                            size="sm"
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -128,8 +129,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                           <Button
                             isIconOnly
                             className="bg-transparent text-gray-600 hover:bg-green-50 min-w-[32px] h-[32px] rounded-none border-l border-gray-200"
-                            size="sm"
                             radius="none"
+                            size="sm"
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
@@ -143,8 +144,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                         <Button
                           isIconOnly
                           className="bg-accent/10 text-accent hover:bg-accent hover:!text-white transition-all"
-                          size="sm"
                           radius="sm"
+                          size="sm"
                           onClick={() => addToCart(product, 1)}
                         >
                           <ShoppingCart className="w-4 h-4 " />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Skeleton } from "@heroui/skeleton";
+
 import { productAPI } from "@/utils/server";
 import { Product } from "@/types";
 import HeroSection from "@/components/landing/HeroSection";
@@ -18,6 +18,7 @@ export default function Home() {
       try {
         setLoading(true);
         const data = await productAPI.getProducts();
+
         setProducts(data);
       } catch (err) {
         console.error("Failed to load products:", err);

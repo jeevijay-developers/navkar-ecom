@@ -14,9 +14,10 @@ import {
   TableCell,
 } from "@heroui/table";
 import { Divider } from "@heroui/divider";
+import { ShoppingCart, Plus, Minus, Check } from "lucide-react";
+
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
-import { ShoppingCart, Plus, Minus, Check } from "lucide-react";
 
 interface ProductDetailsProps {
   product: Product;
@@ -25,7 +26,7 @@ interface ProductDetailsProps {
 export default function ProductDetails({ product }: ProductDetailsProps) {
   const { addToCart, updateQuantity, removeFromCart, isInCart, cart } =
     useCart();
-  const [selectedVariant, setSelectedVariant] = useState<string | undefined>(
+  const [selectedVariant, _setSelectedVariant] = useState<string | undefined>(
     undefined
   );
 
@@ -56,11 +57,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <div className="grid md:grid-cols-2 gap-10">
             <div className="relative bg-secondary-50 rounded-xl p-8 flex items-center justify-center">
               <Image
-                src={product.imageUrl}
                 alt={product.name}
-                width="100%"
-                height={450}
                 className="object-contain"
+                height={450}
+                src={product.imageUrl}
+                width="100%"
               />
             </div>
             <div className="space-y-6">
@@ -76,10 +77,10 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     Material of Construction
                   </p>
                   <Chip
-                    variant="flat"
                     className="bg-accent/5 text-accent border border-accent/20 font-medium px-4 py-5"
-                    size="lg"
                     radius="sm"
+                    size="lg"
+                    variant="flat"
                   >
                     {product.materialOfConstruction}
                   </Chip>
@@ -89,10 +90,10 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     Cap Type
                   </p>
                   <Chip
-                    variant="flat"
                     className="bg-secondary-100/50 text-secondary-700 border border-secondary-200 font-medium px-4 py-5"
-                    size="lg"
                     radius="sm"
+                    size="lg"
+                    variant="flat"
                   >
                     {product.capType}
                   </Chip>
@@ -115,8 +116,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               <div className="space-y-4">
                 {!inCart ? (
                   <Button
-                    size="lg"
                     className="w-fit bg-accent text-white font-bold hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl"
+                    size="lg"
                     startContent={<ShoppingCart className="w-5 h-5" />}
                     onClick={handleAddToCart}
                   >
@@ -129,8 +130,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                         <Button
                           isIconOnly
                           className="bg-transparent text-accent hover:bg-accent/5 min-w-[48px] h-[48px] rounded-none border-r border-accent"
-                          size="lg"
                           radius="none"
+                          size="lg"
                           onClick={handleDecrement}
                         >
                           <Minus className="w-5 h-5" />
@@ -141,8 +142,8 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                         <Button
                           isIconOnly
                           className="bg-transparent text-accent hover:bg-accent/5 min-w-[48px] h-[48px] rounded-none border-l border-accent"
-                          size="lg"
                           radius="none"
+                          size="lg"
                           onClick={handleIncrement}
                         >
                           <Plus className="w-5 h-5" />

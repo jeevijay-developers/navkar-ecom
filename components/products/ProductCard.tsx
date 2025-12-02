@@ -4,11 +4,11 @@ import { Card, CardBody, CardFooter } from "@heroui/card";
 import { Image } from "@heroui/image";
 import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
-import { Badge } from "@heroui/badge";
-import { Product } from "@/types";
-import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { ShoppingCart, Plus, Minus } from "lucide-react";
+
+import { Product } from "@/types";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   product: Product;
@@ -53,12 +53,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         <CardBody className="p-0">
           <div className="relative overflow-hidden bg-secondary-50">
             <Image
-              src={product.imageUrl}
               alt={product.name}
-              width="100%"
-              height={240}
               className="object-contain group-hover:scale-105 transition-transform duration-300"
+              height={240}
               radius="none"
+              src={product.imageUrl}
+              width="100%"
             />
           </div>
           <div className="p-6 space-y-4">
@@ -67,18 +67,18 @@ export default function ProductCard({ product }: ProductCardProps) {
             </h3>
             <div className="flex flex-wrap gap-2">
               <Chip
-                size="sm"
-                variant="flat"
                 className="bg-accent/5 text-accent border border-accent/20 font-medium"
                 radius="sm"
+                size="sm"
+                variant="flat"
               >
                 {product.materialOfConstruction}
               </Chip>
               <Chip
-                size="sm"
-                variant="flat"
                 className="bg-secondary-100/50 text-secondary-700 border border-secondary-200 font-medium"
                 radius="sm"
+                size="sm"
+                variant="flat"
               >
                 {product.capType}
               </Chip>
@@ -94,10 +94,10 @@ export default function ProductCard({ product }: ProductCardProps) {
         <CardFooter className="pt-0 px-6 pb-6 flex gap-3">
           <Button
             as={Link}
-            href={`/products/${product._id}`}
             className="flex-1 bg-accent text-white font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg"
-            size="md"
+            href={`/products/${product._id}`}
             radius="sm"
+            size="md"
           >
             View Details
           </Button>
@@ -106,8 +106,8 @@ export default function ProductCard({ product }: ProductCardProps) {
               <Button
                 isIconOnly
                 className="bg-transparent text-gray-600 hover:bg-gray-50 min-w-[36px] h-[36px] rounded-none border-r border-gray-200"
-                size="sm"
                 radius="none"
+                size="sm"
                 onClick={handleDecrement}
               >
                 <Minus className="w-4 h-4" />
@@ -118,8 +118,8 @@ export default function ProductCard({ product }: ProductCardProps) {
               <Button
                 isIconOnly
                 className="bg-transparent text-gray-600 hover:bg-gray-50 min-w-[36px] h-[36px] rounded-none border-l border-gray-200"
-                size="sm"
                 radius="none"
+                size="sm"
                 onClick={handleIncrement}
               >
                 <Plus className="w-4 h-4" />
@@ -129,8 +129,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             <Button
               isIconOnly
               className="bg-accent/10 text-accent hover:bg-accent hover:!text-white font-semibold transition-all shadow-md hover:shadow-lg"
-              size="md"
               radius="sm"
+              size="md"
               onClick={handleAddToCart}
             >
               <ShoppingCart className="w-5 h-5" />

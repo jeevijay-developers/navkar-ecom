@@ -1,19 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import { Spinner } from "@heroui/spinner";
+import { useParams } from "next/navigation";
 import { Alert } from "@heroui/alert";
-import { Skeleton } from "@heroui/skeleton";
 import { Button } from "@heroui/button";
+import Link from "next/link";
+
 import { productAPI } from "@/utils/server";
 import { Product } from "@/types";
 import ProductDetails from "@/components/products/ProductDetails";
-import Link from "next/link";
 
 export default function ProductDetailPage() {
   const params = useParams();
-  const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,6 +21,7 @@ export default function ProductDetailPage() {
       if (!params.id || typeof params.id !== "string") {
         setError("Invalid product ID");
         setLoading(false);
+
         return;
       }
 
@@ -30,6 +29,7 @@ export default function ProductDetailPage() {
         setLoading(true);
         setError(null);
         const data = await productAPI.getProductById(params.id);
+
         setProduct(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load product");
@@ -56,10 +56,10 @@ export default function ProductDetailPage() {
       <div className="max-w-7xl mx-auto px-6 space-y-6 py-8">
         <div className="max-w-3xl mx-auto">
           <Alert
-            color="danger"
-            variant="flat"
             className="shadow-lg border border-red-200"
+            color="danger"
             radius="lg"
+            variant="flat"
           >
             <div className="space-y-2">
               <p className="font-bold text-lg">Error Loading Product</p>
@@ -68,10 +68,10 @@ export default function ProductDetailPage() {
           </Alert>
           <Button
             as={Link}
-            href="/"
             className="bg-accent text-white font-semibold shadow-md hover:shadow-lg mt-6"
-            size="lg"
+            href="/"
             radius="sm"
+            size="lg"
           >
             Back to Products
           </Button>
@@ -85,24 +85,24 @@ export default function ProductDetailPage() {
       <div className="max-w-7xl mx-auto px-6 space-y-6 py-8">
         <div className="max-w-3xl mx-auto">
           <Alert
-            color="warning"
-            variant="flat"
             className="shadow-lg border border-yellow-200"
+            color="warning"
             radius="lg"
+            variant="flat"
           >
             <div className="space-y-2">
               <p className="font-bold text-lg">Product Not Found</p>
               <p className="text-sm font-medium">
-                The product you're looking for doesn't exist.
+                The product you&aposre looking for doesn&apost exist.
               </p>
             </div>
           </Alert>
           <Button
             as={Link}
-            href="/"
             className="bg-accent text-white font-semibold shadow-md hover:shadow-lg mt-6"
-            size="lg"
+            href="/"
             radius="sm"
+            size="lg"
           >
             Back to Products
           </Button>
@@ -115,11 +115,11 @@ export default function ProductDetailPage() {
     <div className="max-w-7xl mx-auto px-6 space-y-8 py-8">
       <Button
         as={Link}
-        href="/"
-        variant="light"
         className="text-accent font-semibold hover:bg-accent/5"
+        href="/"
         size="md"
         startContent={<span>←</span>}
+        variant="light"
       >
         Back to Products
       </Button>

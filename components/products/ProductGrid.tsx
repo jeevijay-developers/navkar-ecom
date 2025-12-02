@@ -1,7 +1,8 @@
 "use client";
 
-import { Product } from "@/types";
 import ProductCard from "./ProductCard";
+
+import { Product } from "@/types";
 
 interface ProductGridProps {
   products: Product[];

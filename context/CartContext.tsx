@@ -7,6 +7,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
+
 import { Product } from "@/types";
 
 export interface CartItem {
@@ -37,10 +38,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // Load cart from localStorage on mount
   useEffect(() => {
     const savedCart = localStorage.getItem("navkar-cart");
+
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error("Failed to load cart from localStorage", error);
       }
     }
@@ -61,7 +64,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
       if (existingIndex > -1) {
         const updatedCart = [...prevCart];
+
         updatedCart[existingIndex].quantity += quantity;
+
         return updatedCart;
       }
 
@@ -81,6 +86,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const updateQuantity = (productId: string, quantity: number) => {
     if (quantity <= 0) {
       removeFromCart(productId);
+
       return;
     }
 
@@ -122,8 +128,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
 export function useCart() {
   const context = useContext(CartContext);
+
   if (context === undefined) {
     throw new Error("useCart must be used within a CartProvider");
   }
+
   return context;
 }

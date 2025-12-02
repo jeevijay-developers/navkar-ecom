@@ -9,10 +9,11 @@ import { Divider } from "@heroui/divider";
 import { Image } from "@heroui/image";
 import { Chip } from "@heroui/chip";
 import toast, { Toaster } from "react-hot-toast";
-import { useCart } from "@/context/CartContext";
-import { quotationAPI } from "@/utils/server";
 import { Trash2, Plus, Minus, Send, ShoppingBag } from "lucide-react";
 import Link from "next/link";
+
+import { useCart } from "@/context/CartContext";
+import { quotationAPI } from "@/utils/server";
 
 export default function CartPage() {
   const router = useRouter();
@@ -30,6 +31,7 @@ export default function CartPage() {
         position: "top-center",
         duration: 4000,
       });
+
       return;
     }
 
@@ -38,6 +40,7 @@ export default function CartPage() {
         position: "top-center",
         duration: 4000,
       });
+
       return;
     }
 
@@ -80,6 +83,7 @@ export default function CartPage() {
         router.push("/");
       }, 2000);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error submitting enquiry:", error);
       toast.error(
         "Failed to submit enquiry. Please try again or contact us directly.",
@@ -111,10 +115,10 @@ export default function CartPage() {
           </div>
           <Button
             as={Link}
-            href="/"
             className="bg-accent text-white font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg"
-            size="lg"
+            href="/"
             radius="sm"
+            size="lg"
           >
             Browse Products
           </Button>
@@ -159,7 +163,7 @@ export default function CartPage() {
             {getCartCount()} item{getCartCount() !== 1 ? "s" : ""} ready for
             quotation
           </p>
-          <div className="w-24 h-1 bg-accent"></div>
+          <div className="w-24 h-1 bg-accent" />
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -174,11 +178,11 @@ export default function CartPage() {
                   <div className="flex gap-6">
                     <div className="flex-shrink-0 w-28 h-28 bg-secondary-50 rounded-xl overflow-hidden flex items-center justify-center p-3">
                       <Image
-                        src={item.product.imageUrl}
                         alt={item.product.name}
-                        width={112}
-                        height={112}
                         className="object-contain w-full h-full"
+                        height={112}
+                        src={item.product.imageUrl}
+                        width={112}
                       />
                     </div>
                     <div className="flex-1 space-y-4">
@@ -188,19 +192,19 @@ export default function CartPage() {
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           <Chip
-                            size="sm"
-                            variant="flat"
                             className="bg-accent/5 text-accent border border-accent/20 font-medium text-xs"
                             radius="sm"
+                            size="sm"
+                            variant="flat"
                           >
                             {item.product.materialOfConstruction}
                           </Chip>
                           {item.selectedVariant && (
                             <Chip
-                              size="sm"
-                              variant="flat"
                               className="bg-secondary-100/50 text-secondary-700 border border-secondary-200 font-medium text-xs"
                               radius="sm"
+                              size="sm"
+                              variant="flat"
                             >
                               {item.selectedVariant}
                             </Chip>
@@ -211,9 +215,9 @@ export default function CartPage() {
                         <div className="flex items-center gap-0 bg-secondary-50 rounded-lg p-1">
                           <Button
                             isIconOnly
+                            className="text-accent hover:bg-white min-w-8 h-8"
                             size="sm"
                             variant="light"
-                            className="text-accent hover:bg-white min-w-8 h-8"
                             onClick={() =>
                               updateQuantity(
                                 item.product._id,
@@ -228,9 +232,9 @@ export default function CartPage() {
                           </span>
                           <Button
                             isIconOnly
+                            className="text-accent hover:bg-white min-w-8 h-8"
                             size="sm"
                             variant="light"
-                            className="text-accent hover:bg-white min-w-8 h-8"
                             onClick={() =>
                               updateQuantity(
                                 item.product._id,
@@ -243,10 +247,10 @@ export default function CartPage() {
                         </div>
                         <Button
                           isIconOnly
-                          color="danger"
-                          variant="light"
-                          size="sm"
                           className="hover:bg-red-50"
+                          color="danger"
+                          size="sm"
+                          variant="light"
                           onClick={() => removeFromCart(item.product._id)}
                         >
                           <Trash2 className="w-5 h-5" />
@@ -279,67 +283,67 @@ export default function CartPage() {
 
                 <div className="space-y-5">
                   <Input
+                    isRequired
+                    classNames={{
+                      label: "font-semibold text-black text-sm",
+                      input: "font-medium text-base text-black",
+                      inputWrapper:
+                        "border-accent/20 hover:border-accent/40 focus-within:!border-accent",
+                    }}
                     label="Full Name"
                     placeholder="Enter your name"
+                    radius="lg"
+                    size="lg"
                     value={customerName}
-                    onChange={(e) => setCustomerName(e.target.value)}
-                    isRequired
                     variant="bordered"
+                    onChange={(e) => setCustomerName(e.target.value)}
+                  />
+                  <Input
+                    isRequired
                     classNames={{
                       label: "font-semibold text-black text-sm",
                       input: "font-medium text-base text-black",
                       inputWrapper:
                         "border-accent/20 hover:border-accent/40 focus-within:!border-accent",
                     }}
-                    radius="lg"
-                    size="lg"
-                  />
-                  <Input
                     label="Phone Number"
                     placeholder="Enter your phone number"
-                    value={customerPhone}
-                    onChange={(e) => setCustomerPhone(e.target.value)}
-                    isRequired
-                    variant="bordered"
-                    classNames={{
-                      label: "font-semibold text-black text-sm",
-                      input: "font-medium text-base text-black",
-                      inputWrapper:
-                        "border-accent/20 hover:border-accent/40 focus-within:!border-accent",
-                    }}
                     radius="lg"
                     size="lg"
+                    value={customerPhone}
+                    variant="bordered"
+                    onChange={(e) => setCustomerPhone(e.target.value)}
                   />
                   <Input
-                    label="Email Address"
-                    type="email"
-                    placeholder="Enter your email (optional)"
-                    value={customerEmail}
-                    onChange={(e) => setCustomerEmail(e.target.value)}
-                    variant="bordered"
                     classNames={{
                       label: "font-semibold text-black text-sm",
                       input: "font-medium text-base text-black",
                       inputWrapper:
                         "border-accent/20 hover:border-accent/40 focus-within:!border-accent",
                     }}
+                    label="Email Address"
+                    placeholder="Enter your email (optional)"
                     radius="lg"
                     size="lg"
+                    type="email"
+                    value={customerEmail}
+                    variant="bordered"
+                    onChange={(e) => setCustomerEmail(e.target.value)}
                   />
                   <Textarea
-                    label="Additional Requirements"
-                    placeholder="Any specific requirements or questions? (optional)"
-                    value={customerMessage}
-                    onChange={(e) => setCustomerMessage(e.target.value)}
-                    minRows={4}
-                    variant="bordered"
                     classNames={{
                       label: "font-semibold text-black text-sm",
                       input: "font-medium text-base text-black",
                       inputWrapper:
                         "border-accent/20 hover:border-accent/40 focus-within:!border-accent",
                     }}
+                    label="Additional Requirements"
+                    minRows={4}
+                    placeholder="Any specific requirements or questions? (optional)"
                     radius="lg"
+                    value={customerMessage}
+                    variant="bordered"
+                    onChange={(e) => setCustomerMessage(e.target.value)}
                   />
                 </div>
 
@@ -348,20 +352,20 @@ export default function CartPage() {
                 <div className="space-y-3 flex flex-row gap-3">
                   <Button
                     className="w-full border-accent/20 text-accent hover:bg-accent/5"
-                    variant="bordered"
-                    size="md"
                     radius="lg"
+                    size="md"
+                    variant="bordered"
                     onClick={clearCart}
                   >
                     Clear Cart
                   </Button>
                   <Button
                     className="w-full bg-accent text-white hover:bg-accent/90 transition-all shadow-lg hover:shadow-xl"
-                    size="md"
+                    isLoading={isSubmitting}
                     radius="lg"
+                    size="md"
                     startContent={!isSubmitting && <Send className="size-4" />}
                     onClick={handleSubmitEnquiry}
-                    isLoading={isSubmitting}
                   >
                     Send Enquiry
                   </Button>
