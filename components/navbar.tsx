@@ -14,6 +14,7 @@ import { Button } from "@heroui/button";
 import { Badge } from "@heroui/badge";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
+import Image from "next/image";
 import { ShoppingCart, Phone, Menu } from "lucide-react";
 import { useState } from "react";
 import { SearchBar } from "@/components/common/SearchBar";
@@ -30,10 +31,10 @@ export function Navbar() {
 
   return (
     <HeroUINavbar
-      maxWidth="full"
-      className="border-b border-accent/10 bg-white/98 backdrop-blur-lg shadow-sm fixed top-0 z-50"
+      maxWidth="2xl" 
+      className="border-b border-accent/10 bg-white/98 backdrop-blur-lg shadow-sm fixed top-0 z-50 py-3"
       shouldHideOnScroll={false}
-      height="4.5rem"
+      height="4rem"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
@@ -51,10 +52,15 @@ export function Navbar() {
           href="/"
           className="font-black text-2xl md:text-3xl text-accent tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
         >
-          <span className="bg-accent text-white px-2 py-1 rounded-lg text-xl">
-            N
-          </span>
-          <span className="hidden sm:inline">NAVKAR</span>
+          <Image
+            src="/navkarEcom.png"
+            alt="NAVKAR Logo"
+            width={70}
+            height={70}
+            className="object-contain"
+            priority
+          />
+        <span className="font-black text-2xl">NAVKAR</span>
         </Link>
       </NavbarBrand>
       {/* Center Nav Items */}
