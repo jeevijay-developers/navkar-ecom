@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+:root {
+  --accent-color: #342e66;
+  --primary-color: #ffffff;
+  --secondary-color: #6b7280;
+}
+
+/* Industrial Factory Theme Styles */
+body {
+  background-color: var(--primary-color);
+  color: #1f2937;
+}
+
+/* Minimal, clean typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  /* color: var(--accent-color); */
+}
+
+/* Industrial-style borders and accents */
+.border-accent {
+  border-color: var(--accent-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+/* Clean, structured layouts */
+.container {
+  max-width: 1280px;
+}
+
+/* Subtle shadows for depth */
+.shadow-industrial {
+  box-shadow: 0 2px 8px rgba(69, 40, 41, 0.1);
+}
+
+/* Factory-inspired grid spacing */
+.grid-industrial {
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid-industrial {
+    gap: 2rem;
+  }
+}
