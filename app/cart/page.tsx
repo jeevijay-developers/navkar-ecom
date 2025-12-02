@@ -363,7 +363,7 @@ export default function CartPage() {
                     onClick={handleSubmitEnquiry}
                     isLoading={isSubmitting}
                   >
-                    Submit Enquiry
+                    Send Enquiry
                   </Button>
                 </div>
               </CardBody>
