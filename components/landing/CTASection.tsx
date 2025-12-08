@@ -42,7 +42,7 @@ export default function CTASection() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-white/20">
-            s{" "}
+            {" "}
             <a
               className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
               href="mailto:info@navkar.com"

@@ -61,7 +61,6 @@ export function Navbar() {
             src="/navkarEcom.png"
             width={70}
           />
-          <span className="font-black text-2xl">NAVKAR</span>
         </Link>
       </NavbarBrand>
       {/* Center Nav Items */}
@@ -137,7 +136,7 @@ export function Navbar() {
           <SearchBar />
         </div>
 
-        {navItems.map((item, index) => (
+        {navItems.map((item) => (
           <NavbarMenuItem key={item.href}>
             <HeroUILink
               as={Link}

@@ -6,7 +6,7 @@ import { ArrowRight, Factory, Shield, Truck, Headphones } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-accent via-accent/95 to-accent/90 text-white">
+    <section className="relative overflow-hidden bg-gradient-to-br bg-accent text-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div

@@ -42,14 +42,14 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow pt-[4.5rem]">{children}</main>
-            <footer className="w-full bg-accent text-white">
+            <footer className="w-full bg-white text-black/90">
               <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                   {/* Brand */}
@@ -62,9 +62,8 @@ export default function RootLayout({
                         src="/LiteLogo.png"
                         width={70}
                       />
-                      <span className="font-black text-2xl">NAVKAR</span>
                     </div>
-                    <p className="text-white/70 text-sm leading-relaxed max-w-md">
+                    <p className="text-black/70 text-sm leading-relaxed max-w-md">
                       Premium industrial packaging solutions engineered for
                       excellence. Quality products backed by years of expertise
                       in the industry.
@@ -73,7 +72,7 @@ export default function RootLayout({
                   {/* Contact */}
                   <div className="space-y-4">
                     <h4 className="font-semibold text-lg">Contact</h4>
-                    <ul className="space-y-2 text-white/70 text-sm">
+                    <ul className="space-y-2 text-black/70 text-sm">
                       <li>+91 98765 43210</li>
                       <li>info@navkar.com</li>
                       <li>Mumbai, India</li>
@@ -85,7 +84,7 @@ export default function RootLayout({
                     <ul className="space-y-2">
                       <li>
                         <a
-                          className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-2"
+                          className="text-black/70 hover:text-black transition-colors text-sm flex items-center gap-2"
                           href="https://www.facebook.com/share/1ADK7Rpefs/"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -106,7 +105,7 @@ export default function RootLayout({
                       </li>
                       <li>
                         <a
-                          className="text-white/70 hover:text-white transition-colors text-sm flex items-center gap-2"
+                          className="text-black/70 hover:text-black transition-colors text-sm flex items-center gap-2"
                           href="https://www.instagram.com/navkarblowpack?igsh=MXAzZ25qZG41cXFjcg=="
                           rel="noopener noreferrer"
                           target="_blank"
@@ -128,7 +127,7 @@ export default function RootLayout({
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/50 text-sm">
+                <div className="border-t border-black/10 mt-8 pt-8 text-center text-black/50 text-sm">
                   <p>
                     © {new Date().getFullYear()} Navkar. All rights reserved.
                   </p>
