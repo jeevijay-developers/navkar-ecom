@@ -32,11 +32,15 @@ export function Navbar() {
 
   return (
     <HeroUINavbar
-      className="border-b border-accent/10 bg-white/98 backdrop-blur-lg shadow-sm fixed top-0 z-50 py-3"
+      className="border-b backdrop-blur-lg shadow-lg fixed top-0 z-50 py-3"
       height="4rem"
       isMenuOpen={isMenuOpen}
       maxWidth="2xl"
       shouldHideOnScroll={false}
+      style={{
+        backgroundColor: "rgba(13, 13, 13, 0.95)",
+        borderBottom: "1px solid rgba(250, 142, 0, 0.2)",
+      }}
       onMenuOpenChange={setIsMenuOpen}
     >
       {/* Mobile Menu Toggle */}
@@ -50,7 +54,12 @@ export function Navbar() {
       {/* Brand */}
       <NavbarBrand>
         <Link
-          className="font-black text-2xl md:text-3xl text-accent tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
+          className="font-black text-2xl md:text-3xl tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
+          style={{
+            background: "linear-gradient(135deg, #fa8e00, #d43800)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
           href="/"
         >
           <Image
@@ -69,12 +78,17 @@ export function Navbar() {
           <NavbarItem key={item.href}>
             <HeroUILink
               as={Link}
-              className="text-secondary-700 font-medium hover:text-accent transition-colors text-base relative group"
-              color="foreground"
+              className="font-medium transition-colors text-base relative group"
+              style={{ color: "#b0b0b0" }}
               href={item.href}
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
+              <span
+                className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full"
+                style={{
+                  background: "linear-gradient(135deg, #fa8e00, #d43800)",
+                }}
+              />
             </HeroUILink>
           </NavbarItem>
         ))}
@@ -104,7 +118,8 @@ export function Navbar() {
             <Button
               isIconOnly
               as={Link}
-              className="text-accent hover:bg-accent/5"
+              className="hover:bg-white/5"
+              style={{ color: "#fa8e00" }}
               href="/cart"
               radius="sm"
               size="md"
@@ -119,7 +134,8 @@ export function Navbar() {
         <NavbarItem className="hidden sm:flex">
           <Button
             as={Link}
-            className="bg-accent text-white font-semibold hover:bg-accent/90 transition-all shadow-md hover:shadow-lg"
+            className="text-white font-semibold transition-all shadow-lg hover:shadow-xl"
+            style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
             href="/cart"
             radius="sm"
             size="md"
@@ -130,9 +146,15 @@ export function Navbar() {
       </NavbarContent>
 
       {/* Mobile Menu */}
-      <NavbarMenu className="pt-6 bg-white/98 backdrop-blur-lg">
+      <NavbarMenu
+        className="pt-6 backdrop-blur-lg"
+        style={{ backgroundColor: "rgba(13, 13, 13, 0.98)" }}
+      >
         {/* Search Bar - Mobile */}
-        <div className="px-4 pb-4 border-b border-accent/10">
+        <div
+          className="px-4 pb-4"
+          style={{ borderBottom: "1px solid rgba(250, 142, 0, 0.2)" }}
+        >
           <SearchBar />
         </div>
 
@@ -140,7 +162,11 @@ export function Navbar() {
           <NavbarMenuItem key={item.href}>
             <HeroUILink
               as={Link}
-              className="w-full text-lg font-medium text-secondary-700 hover:text-accent py-3 border-b border-accent/10"
+              className="w-full text-lg font-medium py-3"
+              style={{
+                color: "#b0b0b0",
+                borderBottom: "1px solid rgba(250, 142, 0, 0.1)",
+              }}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -151,7 +177,8 @@ export function Navbar() {
         <NavbarMenuItem className="pt-4">
           <Button
             as={Link}
-            className="w-full bg-accent text-white font-semibold"
+            className="w-full text-white font-semibold"
+            style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
             href="/cart"
             radius="sm"
             size="lg"

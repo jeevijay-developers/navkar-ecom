@@ -6,7 +6,10 @@ import { ArrowRight, Mail } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-accent text-white relative overflow-hidden">
+    <section
+      className="py-20 text-white relative overflow-hidden"
+      style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -22,7 +25,7 @@ export default function CTASection() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto">
             Contact us today for a personalized quotation on our premium
             industrial packaging solutions. Our team is ready to help you find
             the perfect products for your needs.
@@ -31,7 +34,8 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button
               as={Link}
-              className="bg-white text-accent font-bold hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all px-8"
+              className="bg-white font-bold hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all px-8"
+              style={{ color: "#d43800" }}
               endContent={<ArrowRight className="w-5 h-5" />}
               href="/cart"
               radius="sm"
@@ -44,7 +48,7 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-white/20">
             {" "}
             <a
-              className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+              className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
               href="mailto:info@navkar.com"
             >
               <Mail className="w-5 h-5" />

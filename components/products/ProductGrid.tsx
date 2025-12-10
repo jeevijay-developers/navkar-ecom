@@ -12,10 +12,10 @@ export default function ProductGrid({ products }: ProductGridProps) {
   if (products.length === 0) {
     return (
       <div className="text-center py-20">
-        <p className="text-secondary-500 text-xl font-light">
+        <p className="text-xl font-light" style={{ color: "#b0b0b0" }}>
           No products found
         </p>
-        <p className="text-secondary-400 text-sm mt-2">
+        <p className="text-sm mt-2" style={{ color: "#808080" }}>
           Check back soon for new additions
         </p>
       </div>

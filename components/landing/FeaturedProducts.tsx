@@ -24,23 +24,41 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
   }
 
   return (
-    <section className="py-20 bg-white" id="products">
+    <section
+      className="py-20"
+      style={{ backgroundColor: "#0d0d0d" }}
+      id="products"
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div className="space-y-4">
-            <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold tracking-wide">
+            <span
+              className="inline-block px-4 py-2 rounded-full text-sm font-semibold tracking-wide"
+              style={{ background: "rgba(250, 142, 0, 0.1)", color: "#fa8e00" }}
+            >
               Featured Products
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-accent tracking-tight">
+            <h2
+              className="text-4xl md:text-5xl font-bold tracking-tight"
+              style={{
+                background: "linear-gradient(135deg, #fa8e00, #d43800)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               Popular Products
             </h2>
-            <p className="text-secondary-600 text-lg font-light max-w-xl">
+            <p
+              className="text-lg font-light max-w-xl"
+              style={{ color: "#b0b0b0" }}
+            >
               Explore our most sought-after industrial packaging solutions
             </p>
           </div>
           <Button
             as={Link}
-            className="text-accent font-semibold self-start md:self-auto"
+            className="font-semibold self-start md:self-auto"
+            style={{ color: "#fa8e00" }}
             endContent={<ArrowRight className="w-5 h-5" />}
             href="/products"
             variant="light"
@@ -60,11 +78,18 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
             return (
               <Card
                 key={product._id}
-                className="border border-accent/10 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group overflow-hidden"
+                className="shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                style={{
+                  backgroundColor: "#1a1a1a",
+                  border: "1px solid rgba(250, 142, 0, 0.2)",
+                }}
                 radius="lg"
               >
                 <CardBody className="p-0">
-                  <div className="relative overflow-hidden bg-secondary-50 h-56">
+                  <div
+                    className="relative overflow-hidden h-56"
+                    style={{ backgroundColor: "#0d0d0d" }}
+                  >
                     <Image
                       alt={product.name}
                       className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300 p-4"
@@ -75,12 +100,20 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                     />
                   </div>
                   <div className="p-6 space-y-4">
-                    <h3 className="text-lg font-bold text-accent line-clamp-2 min-h-[3.5rem] leading-tight">
+                    <h3
+                      className="text-lg font-bold line-clamp-2 min-h-[3.5rem] leading-tight"
+                      style={{ color: "#ffffff" }}
+                    >
                       {product.name}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       <Chip
-                        className="bg-accent/5 text-accent border border-accent/20 font-medium text-xs"
+                        className="font-medium text-xs"
+                        style={{
+                          background: "rgba(250, 142, 0, 0.1)",
+                          color: "#fa8e00",
+                          border: "1px solid rgba(250, 142, 0, 0.2)",
+                        }}
                         radius="sm"
                         size="sm"
                         variant="flat"
@@ -89,7 +122,10 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                       </Chip>
                     </div>
                     {product.variants && product.variants.length > 0 && (
-                      <p className="text-sm text-secondary-500 font-medium">
+                      <p
+                        className="text-sm font-medium"
+                        style={{ color: "#b0b0b0" }}
+                      >
                         {product.variants.length} variant
                         {product.variants.length > 1 ? "s" : ""} available
                       </p>
@@ -97,7 +133,11 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                     <div className="flex gap-2 pt-2">
                       <Button
                         as={Link}
-                        className="flex-1 bg-accent text-white font-semibold hover:bg-accent/90 transition-all"
+                        className="flex-1 text-white font-semibold transition-all"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #fa8e00, #d43800)",
+                        }}
                         href={`/products/${product._id}`}
                         radius="sm"
                         size="sm"
@@ -105,10 +145,18 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                         View Details
                       </Button>
                       {inCart ? (
-                        <div className="flex items-center gap-0 border-2 border-gray-200 rounded-lg overflow-hidden">
+                        <div
+                          className="flex items-center gap-0 rounded-lg overflow-hidden"
+                          style={{ border: "2px solid rgba(250, 142, 0, 0.3)" }}
+                        >
                           <Button
                             isIconOnly
-                            className="bg-transparent text-gray-600 hover:bg-gray-50 min-w-[32px] h-[32px] rounded-none border-r border-gray-200"
+                            className="min-w-[32px] h-[32px] rounded-none"
+                            style={{
+                              backgroundColor: "transparent",
+                              color: "#b0b0b0",
+                              borderRight: "1px solid rgba(250, 142, 0, 0.2)",
+                            }}
                             radius="none"
                             size="sm"
                             onClick={(e) => {
@@ -123,12 +171,23 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                           >
                             <Minus className="w-3 h-3" />
                           </Button>
-                          <div className="min-w-[36px] h-[32px] flex items-center justify-center text-gray-600 font-bold text-xs bg-white">
+                          <div
+                            className="min-w-[36px] h-[32px] flex items-center justify-center font-bold text-xs"
+                            style={{
+                              backgroundColor: "#1a1a1a",
+                              color: "#fa8e00",
+                            }}
+                          >
                             {cartQuantity}
                           </div>
                           <Button
                             isIconOnly
-                            className="bg-transparent text-gray-600 hover:bg-green-50 min-w-[32px] h-[32px] rounded-none border-l border-gray-200"
+                            className="min-w-[32px] h-[32px] rounded-none"
+                            style={{
+                              backgroundColor: "transparent",
+                              color: "#b0b0b0",
+                              borderLeft: "1px solid rgba(250, 142, 0, 0.2)",
+                            }}
                             radius="none"
                             size="sm"
                             onClick={(e) => {
@@ -143,7 +202,11 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                       ) : (
                         <Button
                           isIconOnly
-                          className="bg-accent/10 text-accent hover:bg-orange-600 hover:!text-white transition-all"
+                          className="transition-all"
+                          style={{
+                            backgroundColor: "rgba(250, 142, 0, 0.1)",
+                            color: "#fa8e00",
+                          }}
                           radius="sm"
                           size="sm"
                           onClick={() => addToCart(product, 1)}

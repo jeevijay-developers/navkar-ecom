@@ -3,18 +3,23 @@
 @config "../tailwind.config.js";
 
 :root {
-  --accent-color: #222222;
-  --primary-color: #ffffff;
-  --secondary-color: #6b7280;
+  --primary-bg: #0d0d0d;
+  --accent-gradient-start: #fa8e00;
+  --accent-gradient-end: #d43800;
+  --accent-blue: rgb(19, 179, 242);
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --card-bg: #1a1a1a;
+  --border-color: rgba(250, 142, 0, 0.2);
 }
 
-/* Industrial Factory Theme Styles */
+/* Dark Theme Base Styles */
 body {
-  background-color: var(--primary-color);
-  color: #1f2937;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
 }
 
-/* Minimal, clean typography */
+/* Professional typography for dark theme */
 h1,
 h2,
 h3,
@@ -23,20 +28,45 @@ h5,
 h6 {
   font-weight: 600;
   letter-spacing: -0.025em;
-  /* color: var(--accent-color); */
+  color: var(--text-primary);
 }
 
-/* Industrial-style borders and accents */
-.border-accent {
-  border-color: var(--accent-color);
+/* Gradient accent styles */
+.bg-accent {
+  background: linear-gradient(
+    135deg,
+    var(--accent-gradient-start),
+    var(--accent-gradient-end)
+  );
 }
 
 .text-accent {
-  color: var(--accent-color);
+  background: linear-gradient(
+    135deg,
+    var(--accent-gradient-start),
+    var(--accent-gradient-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.bg-accent {
-  background-color: var(--accent-color);
+.border-accent {
+  border-color: var(--accent-gradient-start);
+}
+
+.text-accent-solid {
+  color: var(--accent-gradient-start);
+}
+
+.text-blue-accent {
+  color: var(--accent-blue);
+}
+
+/* Card styles for dark theme */
+.card-dark {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
 }
 
 /* Clean, structured layouts */
@@ -44,9 +74,9 @@ h6 {
   max-width: 1280px;
 }
 
-/* Subtle shadows for depth */
+/* Enhanced shadows for depth on dark background */
 .shadow-industrial {
-  box-shadow: 0 2px 8px rgba(69, 40, 41, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Factory-inspired grid spacing */

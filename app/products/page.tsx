@@ -21,7 +21,7 @@ export default function ProductsPage() {
         setProducts(data);
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : "Failed to load products",
+          err instanceof Error ? err.message : "Failed to load products"
         );
       } finally {
         setLoading(false);
@@ -32,7 +32,7 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div>
+    <div style={{ background: "#0d0d0d", minHeight: "100vh" }}>
       <AllProductsSection error={error} loading={loading} products={products} />
     </div>
   );

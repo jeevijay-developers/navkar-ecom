@@ -49,7 +49,10 @@ export default function RootLayout({
           <div className="relative flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow pt-[4.5rem]">{children}</main>
-            <footer className="w-full bg-white text-black/90">
+            <footer
+              className="w-full"
+              style={{ backgroundColor: "#1a1a1a", color: "#ffffff" }}
+            >
               <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                   {/* Brand */}
@@ -63,7 +66,10 @@ export default function RootLayout({
                         width={70}
                       />
                     </div>
-                    <p className="text-black/70 text-sm leading-relaxed max-w-md">
+                    <p
+                      className="text-sm leading-relaxed max-w-md"
+                      style={{ color: "#b0b0b0" }}
+                    >
                       Premium industrial packaging solutions engineered for
                       excellence. Quality products backed by years of expertise
                       in the industry.
@@ -71,8 +77,16 @@ export default function RootLayout({
                   </div>
                   {/* Contact */}
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-lg">Contact</h4>
-                    <ul className="space-y-2 text-black/70 text-sm">
+                    <h4
+                      className="font-semibold text-lg"
+                      style={{ color: "#fa8e00" }}
+                    >
+                      Contact
+                    </h4>
+                    <ul
+                      className="space-y-2 text-sm"
+                      style={{ color: "#b0b0b0" }}
+                    >
                       <li>+91 98765 43210</li>
                       <li>info@navkar.com</li>
                       <li>Mumbai, India</li>
@@ -80,11 +94,17 @@ export default function RootLayout({
                   </div>
                   {/* Social Links */}
                   <div className="space-y-4 ">
-                    <h4 className="font-semibold text-lg">Social Links</h4>
+                    <h4
+                      className="font-semibold text-lg"
+                      style={{ color: "#fa8e00" }}
+                    >
+                      Social Links
+                    </h4>
                     <ul className="space-y-2">
                       <li>
                         <a
-                          className="text-black/70 hover:text-black transition-colors text-sm flex items-center gap-2"
+                          className="transition-colors text-sm flex items-center gap-2"
+                          style={{ color: "#b0b0b0" }}
                           href="https://www.facebook.com/share/1ADK7Rpefs/"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -94,6 +114,7 @@ export default function RootLayout({
                             className="w-5 h-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
+                            style={{ color: "#fa8e00" }}
                           >
                             <path
                               clipRule="evenodd"
@@ -101,11 +122,13 @@ export default function RootLayout({
                               fillRule="evenodd"
                             />
                           </svg>
+                          Facebook
                         </a>
                       </li>
                       <li>
                         <a
-                          className="text-black/70 hover:text-black transition-colors text-sm flex items-center gap-2"
+                          className="transition-colors text-sm flex items-center gap-2"
+                          style={{ color: "#b0b0b0" }}
                           href="https://www.instagram.com/navkarblowpack?igsh=MXAzZ25qZG41cXFjcg=="
                           rel="noopener noreferrer"
                           target="_blank"
@@ -115,6 +138,7 @@ export default function RootLayout({
                             className="w-5 h-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
+                            style={{ color: "#fa8e00" }}
                           >
                             <path
                               clipRule="evenodd"
@@ -122,12 +146,19 @@ export default function RootLayout({
                               fillRule="evenodd"
                             />
                           </svg>
+                          Instagram
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-black/10 mt-8 pt-8 text-center text-black/50 text-sm">
+                <div
+                  className="mt-8 pt-8 text-center text-sm"
+                  style={{
+                    borderTop: "1px solid rgba(250, 142, 0, 0.2)",
+                    color: "#b0b0b0",
+                  }}
+                >
                   <p>
                     © {new Date().getFullYear()} Navkar. All rights reserved.
                   </p>
