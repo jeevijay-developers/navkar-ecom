@@ -40,7 +40,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
           </div>
           <Button
             as={Link}
-            className="text-accent font-semibold hover:bg-accent/5 self-start md:self-auto"
+            className="text-accent font-semibold self-start md:self-auto"
             endContent={<ArrowRight className="w-5 h-5" />}
             href="/products"
             variant="light"
@@ -53,7 +53,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
           {featuredProducts.map((product) => {
             const inCart = isInCart(product._id);
             const cartItem = cart.find(
-              (item) => item.product._id === product._id,
+              (item) => item.product._id === product._id
             );
             const cartQuantity = cartItem?.quantity || 0;
 
@@ -143,7 +143,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                       ) : (
                         <Button
                           isIconOnly
-                          className="bg-accent/10 text-accent hover:bg-accent hover:!text-white transition-all"
+                          className="bg-accent/10 text-accent hover:bg-orange-600 hover:!text-white transition-all"
                           radius="sm"
                           size="sm"
                           onClick={() => addToCart(product, 1)}

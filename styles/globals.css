@@ -3,7 +3,7 @@
 @config "../tailwind.config.js";
 
 :root {
-  --accent-color: #342e66;
+  --accent-color: #222222;
   --primary-color: #ffffff;
   --secondary-color: #6b7280;
 }

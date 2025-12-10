@@ -128,7 +128,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           ) : (
             <Button
               isIconOnly
-              className="bg-accent/10 text-accent hover:bg-accent hover:!text-white font-semibold transition-all shadow-md hover:shadow-lg"
+              className="bg-accent/10 text-accent hover:bg-orange-600 hover:!text-white font-semibold transition-all shadow-md hover:shadow-lg"
               radius="sm"
               size="md"
               onClick={handleAddToCart}

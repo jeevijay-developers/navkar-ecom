@@ -21,6 +21,7 @@ export default function Home() {
 
         setProducts(data);
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.error("Failed to load products:", err);
       } finally {
         setLoading(false);

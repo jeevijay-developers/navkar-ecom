@@ -62,7 +62,7 @@ export default function FeaturesSection() {
               radius="lg"
             >
               <CardBody className="p-8 space-y-4">
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-orange-500 group-hover:scale-110 transition-all duration-300">
                   <feature.icon
                     className="w-7 h-7 text-accent group-hover:!text-white transition-colors duration-300"
                     strokeWidth={1.5}
