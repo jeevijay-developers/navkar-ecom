@@ -8,7 +8,7 @@ export default function CTASection() {
   return (
     <section
       className="py-20 text-white relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
+      // style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">

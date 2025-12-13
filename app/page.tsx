@@ -35,7 +35,7 @@ export default function Home() {
     return (
       <div className="space-y-0">
         {/* Hero Skeleton */}
-        <div className="bg-gray-50 pt-24 pb-16">
+        <div className="bg-black pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
