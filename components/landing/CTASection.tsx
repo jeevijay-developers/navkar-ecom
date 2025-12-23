@@ -8,7 +8,7 @@ export default function CTASection() {
   return (
     <section
       className="py-20 text-white relative overflow-hidden"
-      // style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
+      style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)" }}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -35,11 +35,11 @@ export default function CTASection() {
             <Button
               as={Link}
               className="bg-white font-bold hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all px-8"
-              style={{ color: "#d43800" }}
               endContent={<ArrowRight className="w-5 h-5" />}
               href="/cart"
               radius="sm"
               size="lg"
+              style={{ color: "#0284c7" }}
             >
               Request Quotation
             </Button>

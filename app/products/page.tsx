@@ -32,7 +32,7 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div style={{ background: "#0d0d0d", minHeight: "100vh" }}>
+    <div style={{ background: "#ffffff", minHeight: "100vh" }}>
       <AllProductsSection error={error} loading={loading} products={products} />
     </div>
   );

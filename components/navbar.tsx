@@ -38,8 +38,8 @@ export function Navbar() {
       maxWidth="2xl"
       shouldHideOnScroll={false}
       style={{
-        backgroundColor: "rgba(13, 13, 13, 0.95)",
-        borderBottom: "1px solid rgba(250, 142, 0, 0.2)",
+        backgroundColor: "rgba(255, 255, 255, 0.95)",
+        borderBottom: "1px solid rgba(238, 238, 238, 0.2)",
       }}
       onMenuOpenChange={setIsMenuOpen}
     >
@@ -55,12 +55,11 @@ export function Navbar() {
       <NavbarBrand>
         <Link
           className="font-black text-2xl md:text-3xl tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
+          href="/"
           style={{
-            background: "linear-gradient(135deg, #fa8e00, #d43800)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
-          href="/"
         >
           <Image
             priority
@@ -79,14 +78,14 @@ export function Navbar() {
             <HeroUILink
               as={Link}
               className="font-medium transition-colors text-base relative group"
-              style={{ color: "#b0b0b0" }}
+              style={{ color: "#64748b" }}
               href={item.href}
             >
               {item.label}
               <span
                 className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full"
                 style={{
-                  background: "linear-gradient(135deg, #fa8e00, #d43800)",
+                  background: "linear-gradient(135deg, #0ea5e9, #0284c7)",
                 }}
               />
             </HeroUILink>
@@ -118,8 +117,8 @@ export function Navbar() {
             <Button
               isIconOnly
               as={Link}
-              className="hover:bg-white/5"
-              style={{ color: "#fa8e00" }}
+              className="hover:bg-black/5"
+              style={{ color: "#0ea5e9" }}
               href="/cart"
               radius="sm"
               size="md"
@@ -135,7 +134,7 @@ export function Navbar() {
           <Button
             as={Link}
             className="text-white font-semibold transition-all shadow-lg hover:shadow-xl"
-            style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
+            style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)" }}
             href="/cart"
             radius="sm"
             size="md"
@@ -148,12 +147,12 @@ export function Navbar() {
       {/* Mobile Menu */}
       <NavbarMenu
         className="pt-6 backdrop-blur-lg"
-        style={{ backgroundColor: "rgba(13, 13, 13, 0.98)" }}
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.98)" }}
       >
         {/* Search Bar - Mobile */}
         <div
           className="px-4 pb-4"
-          style={{ borderBottom: "1px solid rgba(250, 142, 0, 0.2)" }}
+          style={{ borderBottom: "1px solid rgba(14, 165, 233, 0.2)" }}
         >
           <SearchBar />
         </div>
@@ -164,8 +163,8 @@ export function Navbar() {
               as={Link}
               className="w-full text-lg font-medium py-3"
               style={{
-                color: "#b0b0b0",
-                borderBottom: "1px solid rgba(250, 142, 0, 0.1)",
+                color: "#64748b",
+                borderBottom: "1px solid rgba(14, 165, 233, 0.1)",
               }}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
@@ -178,7 +177,7 @@ export function Navbar() {
           <Button
             as={Link}
             className="w-full text-white font-semibold"
-            style={{ background: "linear-gradient(135deg, #fa8e00, #d43800)" }}
+            style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)" }}
             href="/cart"
             radius="sm"
             size="lg"

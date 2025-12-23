@@ -44,9 +44,18 @@ export default function ProductDetailPage() {
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-6 space-y-8 py-8">
-        <div className="h-10 w-48 rounded-lg bg-secondary-200 animate-pulse" />
-        <div className="h-[600px] rounded-2xl bg-secondary-200 animate-pulse" />
-        <div className="h-96 rounded-2xl bg-secondary-200 animate-pulse" />
+        <div
+          className="h-10 w-48 rounded-lg animate-pulse"
+          style={{ background: "#f8fafc" }}
+        />
+        <div
+          className="h-[600px] rounded-2xl animate-pulse"
+          style={{ background: "#f8fafc" }}
+        />
+        <div
+          className="h-96 rounded-2xl animate-pulse"
+          style={{ background: "#f8fafc" }}
+        />
       </div>
     );
   }
@@ -68,7 +77,8 @@ export default function ProductDetailPage() {
           </Alert>
           <Button
             as={Link}
-            className="bg-accent text-white font-semibold shadow-md hover:shadow-lg mt-6"
+            className="text-white font-semibold shadow-md hover:shadow-lg mt-6"
+            style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)" }}
             href="/"
             radius="sm"
             size="lg"
@@ -99,7 +109,8 @@ export default function ProductDetailPage() {
           </Alert>
           <Button
             as={Link}
-            className="bg-accent text-white font-semibold shadow-md hover:shadow-lg mt-6"
+            className="text-white font-semibold shadow-md hover:shadow-lg mt-6"
+            style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)" }}
             href="/"
             radius="sm"
             size="lg"
@@ -115,7 +126,8 @@ export default function ProductDetailPage() {
     <div className="max-w-7xl mx-auto px-6 space-y-8 py-8">
       <Button
         as={Link}
-        className="text-accent font-semibold hover:bg-accent/5"
+        className="font-semibold"
+        style={{ color: "#0ea5e9" }}
         href="/"
         size="md"
         startContent={<span>←</span>}

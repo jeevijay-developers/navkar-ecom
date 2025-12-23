@@ -26,7 +26,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
   return (
     <section
       className="py-20"
-      style={{ backgroundColor: "#0d0d0d" }}
+      style={{ backgroundColor: "#ffffff" }}
       id="products"
     >
       <div className="container mx-auto px-6">
@@ -34,14 +34,17 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
           <div className="space-y-4">
             <span
               className="inline-block px-4 py-2 rounded-full text-sm font-semibold tracking-wide"
-              style={{ background: "rgba(250, 142, 0, 0.1)", color: "#fa8e00" }}
+              style={{
+                background: "rgba(14, 165, 233, 0.1)",
+                color: "#0ea5e9",
+              }}
             >
               Featured Products
             </span>
             <h2
               className="text-4xl md:text-5xl font-bold tracking-tight"
               style={{
-                background: "linear-gradient(135deg, #fa8e00, #d43800)",
+                background: "linear-gradient(135deg, #0ea5e9, #0284c7)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -50,7 +53,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
             </h2>
             <p
               className="text-lg font-light max-w-xl"
-              style={{ color: "#b0b0b0" }}
+              style={{ color: "#64748b" }}
             >
               Explore our most sought-after industrial packaging solutions
             </p>
@@ -58,7 +61,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
           <Button
             as={Link}
             className="font-semibold self-start md:self-auto"
-            style={{ color: "#fa8e00" }}
+            style={{ color: "#0ea5e9" }}
             endContent={<ArrowRight className="w-5 h-5" />}
             href="/products"
             variant="light"
@@ -80,15 +83,15 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 key={product._id}
                 className="shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                 style={{
-                  backgroundColor: "#1a1a1a",
-                  border: "1px solid rgba(250, 142, 0, 0.2)",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e2e8f0",
                 }}
                 radius="lg"
               >
                 <CardBody className="p-0">
                   <div
                     className="relative overflow-hidden h-56"
-                    style={{ backgroundColor: "#0d0d0d" }}
+                    style={{ backgroundColor: "#f8fafc" }}
                   >
                     <Image
                       alt={product.name}
@@ -102,7 +105,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                   <div className="p-6 space-y-4">
                     <h3
                       className="text-lg font-bold line-clamp-2 min-h-[3.5rem] leading-tight"
-                      style={{ color: "#ffffff" }}
+                      style={{ color: "#0f172a" }}
                     >
                       {product.name}
                     </h3>
@@ -110,9 +113,9 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                       <Chip
                         className="font-medium text-xs"
                         style={{
-                          background: "rgba(250, 142, 0, 0.1)",
-                          color: "#fa8e00",
-                          border: "1px solid rgba(250, 142, 0, 0.2)",
+                          background: "rgba(14, 165, 233, 0.1)",
+                          color: "#0ea5e9",
+                          border: "1px solid rgba(14, 165, 233, 0.2)",
                         }}
                         radius="sm"
                         size="sm"
@@ -124,7 +127,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                     {product.variants && product.variants.length > 0 && (
                       <p
                         className="text-sm font-medium"
-                        style={{ color: "#b0b0b0" }}
+                        style={{ color: "#64748b" }}
                       >
                         {product.variants.length} variant
                         {product.variants.length > 1 ? "s" : ""} available
@@ -136,7 +139,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                         className="flex-1 text-white font-semibold transition-all"
                         style={{
                           background:
-                            "linear-gradient(135deg, #fa8e00, #d43800)",
+                            "linear-gradient(135deg, #0ea5e9, #0284c7)",
                         }}
                         href={`/products/${product._id}`}
                         radius="sm"
@@ -147,15 +150,17 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                       {inCart ? (
                         <div
                           className="flex items-center gap-0 rounded-lg overflow-hidden"
-                          style={{ border: "2px solid rgba(250, 142, 0, 0.3)" }}
+                          style={{
+                            border: "2px solid rgba(14, 165, 233, 0.3)",
+                          }}
                         >
                           <Button
                             isIconOnly
                             className="min-w-[32px] h-[32px] rounded-none"
                             style={{
                               backgroundColor: "transparent",
-                              color: "#b0b0b0",
-                              borderRight: "1px solid rgba(250, 142, 0, 0.2)",
+                              color: "#64748b",
+                              borderRight: "1px solid rgba(14, 165, 233, 0.2)",
                             }}
                             radius="none"
                             size="sm"
@@ -174,8 +179,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                           <div
                             className="min-w-[36px] h-[32px] flex items-center justify-center font-bold text-xs"
                             style={{
-                              backgroundColor: "#1a1a1a",
-                              color: "#fa8e00",
+                              backgroundColor: "#ffffff",
+                              color: "#0ea5e9",
                             }}
                           >
                             {cartQuantity}
@@ -185,8 +190,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                             className="min-w-[32px] h-[32px] rounded-none"
                             style={{
                               backgroundColor: "transparent",
-                              color: "#b0b0b0",
-                              borderLeft: "1px solid rgba(250, 142, 0, 0.2)",
+                              color: "#64748b",
+                              borderLeft: "1px solid rgba(14, 165, 233, 0.2)",
                             }}
                             radius="none"
                             size="sm"
@@ -204,8 +209,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                           isIconOnly
                           className="transition-all"
                           style={{
-                            backgroundColor: "rgba(250, 142, 0, 0.1)",
-                            color: "#fa8e00",
+                            backgroundColor: "rgba(14, 165, 233, 0.1)",
+                            color: "#0ea5e9",
                           }}
                           radius="sm"
                           size="sm"

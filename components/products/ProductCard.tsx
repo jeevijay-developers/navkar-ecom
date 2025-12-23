@@ -50,14 +50,14 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="h-full transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
         radius="lg"
         style={{
-          background: "#1a1a1a",
-          border: "1px solid rgba(250, 142, 0, 0.2)",
+          background: "#ffffff",
+          border: "1px solid #e2e8f0",
         }}
       >
         <CardBody className="p-0">
           <div
             className="relative overflow-hidden"
-            style={{ background: "#0d0d0d" }}
+            style={{ background: "#f8fafc" }}
           >
             <Image
               alt={product.name}
@@ -71,7 +71,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="p-6 space-y-4">
             <h3
               className="text-xl font-bold line-clamp-2 leading-tight tracking-tight min-h-[3.5rem]"
-              style={{ color: "#ffffff" }}
+              style={{ color: "#0f172a" }}
             >
               {product.name}
             </h3>
@@ -82,9 +82,9 @@ export default function ProductCard({ product }: ProductCardProps) {
                 size="sm"
                 variant="flat"
                 style={{
-                  background: "rgba(250, 142, 0, 0.15)",
-                  color: "#fa8e00",
-                  border: "1px solid rgba(250, 142, 0, 0.3)",
+                  background: "rgba(14, 165, 233, 0.1)",
+                  color: "#0ea5e9",
+                  border: "1px solid rgba(14, 165, 233, 0.2)",
                 }}
               >
                 {product.materialOfConstruction}
@@ -95,16 +95,16 @@ export default function ProductCard({ product }: ProductCardProps) {
                 size="sm"
                 variant="flat"
                 style={{
-                  background: "#0d0d0d",
-                  color: "#b0b0b0",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  background: "#f8fafc",
+                  color: "#64748b",
+                  border: "1px solid #e2e8f0",
                 }}
               >
                 {product.capType}
               </Chip>
             </div>
             {product.variants && product.variants.length > 0 && (
-              <p className="text-sm font-medium" style={{ color: "#b0b0b0" }}>
+              <p className="text-sm font-medium" style={{ color: "#64748b" }}>
                 {product.variants.length} variant
                 {product.variants.length > 1 ? "s" : ""} available
               </p>
@@ -119,7 +119,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             radius="sm"
             size="md"
             style={{
-              background: "linear-gradient(135deg, #fa8e00, #d43800)",
+              background: "linear-gradient(135deg, #0ea5e9, #0284c7)",
               color: "#ffffff",
             }}
           >
@@ -128,7 +128,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {inCart ? (
             <div
               className="flex items-center gap-0 rounded-lg overflow-hidden"
-              style={{ border: "2px solid rgba(250, 142, 0, 0.3)" }}
+              style={{ border: "2px solid rgba(14, 165, 233, 0.3)" }}
             >
               <Button
                 isIconOnly
@@ -136,9 +136,9 @@ export default function ProductCard({ product }: ProductCardProps) {
                 radius="none"
                 size="sm"
                 style={{
-                  background: "#0d0d0d",
-                  color: "#fa8e00",
-                  borderRight: "1px solid rgba(250, 142, 0, 0.3)",
+                  background: "#f8fafc",
+                  color: "#0ea5e9",
+                  borderRight: "1px solid rgba(14, 165, 233, 0.3)",
                 }}
                 onClick={handleDecrement}
               >
@@ -146,7 +146,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               </Button>
               <div
                 className="min-w-[40px] h-[36px] flex items-center justify-center font-bold text-sm"
-                style={{ color: "#ffffff", background: "#0d0d0d" }}
+                style={{ color: "#0ea5e9", background: "#ffffff" }}
               >
                 {cartQuantity}
               </div>
@@ -156,9 +156,9 @@ export default function ProductCard({ product }: ProductCardProps) {
                 radius="none"
                 size="sm"
                 style={{
-                  background: "#0d0d0d",
-                  color: "#fa8e00",
-                  borderLeft: "1px solid rgba(250, 142, 0, 0.3)",
+                  background: "#f8fafc",
+                  color: "#0ea5e9",
+                  borderLeft: "1px solid rgba(14, 165, 233, 0.3)",
                 }}
                 onClick={handleIncrement}
               >
@@ -172,9 +172,9 @@ export default function ProductCard({ product }: ProductCardProps) {
               radius="sm"
               size="md"
               style={{
-                background: "rgba(250, 142, 0, 0.15)",
-                color: "#fa8e00",
-                border: "1px solid rgba(250, 142, 0, 0.3)",
+                background: "rgba(14, 165, 233, 0.1)",
+                color: "#0ea5e9",
+                border: "1px solid rgba(14, 165, 233, 0.2)",
               }}
               onClick={handleAddToCart}
             >

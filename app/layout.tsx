@@ -51,7 +51,7 @@ export default function RootLayout({
             <main className="flex-grow pt-[4.5rem]">{children}</main>
             <footer
               className="w-full"
-              style={{ backgroundColor: "#1a1a1a", color: "#ffffff" }}
+              style={{ backgroundColor: "#f8fafc", color: "#0f172a" }}
             >
               <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -68,7 +68,7 @@ export default function RootLayout({
                     </div>
                     <p
                       className="text-sm leading-relaxed max-w-md"
-                      style={{ color: "#b0b0b0" }}
+                      style={{ color: "#64748b" }}
                     >
                       Premium industrial packaging solutions engineered for
                       excellence. Quality products backed by years of expertise
@@ -79,13 +79,13 @@ export default function RootLayout({
                   <div className="space-y-4">
                     <h4
                       className="font-semibold text-lg"
-                      style={{ color: "#fa8e00" }}
+                      style={{ color: "#0ea5e9" }}
                     >
                       Contact
                     </h4>
                     <ul
                       className="space-y-2 text-sm"
-                      style={{ color: "#b0b0b0" }}
+                      style={{ color: "#64748b" }}
                     >
                       <li>+91 98765 43210</li>
                       <li>info@navkar.com</li>
@@ -96,7 +96,7 @@ export default function RootLayout({
                   <div className="space-y-4 ">
                     <h4
                       className="font-semibold text-lg"
-                      style={{ color: "#fa8e00" }}
+                      style={{ color: "#0ea5e9" }}
                     >
                       Social Links
                     </h4>
@@ -104,7 +104,7 @@ export default function RootLayout({
                       <li>
                         <a
                           className="transition-colors text-sm flex items-center gap-2"
-                          style={{ color: "#b0b0b0" }}
+                          style={{ color: "#64748b" }}
                           href="https://www.facebook.com/share/1ADK7Rpefs/"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -114,7 +114,7 @@ export default function RootLayout({
                             className="w-5 h-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
-                            style={{ color: "#fa8e00" }}
+                            style={{ color: "#0ea5e9" }}
                           >
                             <path
                               clipRule="evenodd"
@@ -128,7 +128,7 @@ export default function RootLayout({
                       <li>
                         <a
                           className="transition-colors text-sm flex items-center gap-2"
-                          style={{ color: "#b0b0b0" }}
+                          style={{ color: "#64748b" }}
                           href="https://www.instagram.com/navkarblowpack?igsh=MXAzZ25qZG41cXFjcg=="
                           rel="noopener noreferrer"
                           target="_blank"
@@ -138,7 +138,7 @@ export default function RootLayout({
                             className="w-5 h-5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
-                            style={{ color: "#fa8e00" }}
+                            style={{ color: "#0ea5e9" }}
                           >
                             <path
                               clipRule="evenodd"
@@ -155,8 +155,8 @@ export default function RootLayout({
                 <div
                   className="mt-8 pt-8 text-center text-sm"
                   style={{
-                    borderTop: "1px solid rgba(250, 142, 0, 0.2)",
-                    color: "#b0b0b0",
+                    borderTop: "1px solid rgba(14, 165, 233, 0.2)",
+                    color: "#64748b",
                   }}
                 >
                   <p>
