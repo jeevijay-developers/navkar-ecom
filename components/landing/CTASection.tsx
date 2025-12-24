@@ -1,9 +1,5 @@
 "use client";
 
-import { Button } from "@heroui/button";
-import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
-
 export default function CTASection() {
   return (
     <section
@@ -22,39 +18,14 @@ export default function CTASection() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <div className="text-4xl text-white/90 md:text-5xl font-bold tracking-tight">
             Ready to Get Started?
-          </h2>
+          </div>
           <p className="text-xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto">
             Contact us today for a personalized quotation on our premium
             industrial packaging solutions. Our team is ready to help you find
             the perfect products for your needs.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button
-              as={Link}
-              className="bg-white font-bold hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all px-8"
-              endContent={<ArrowRight className="w-5 h-5" />}
-              href="/cart"
-              radius="sm"
-              size="lg"
-              style={{ color: "#0284c7" }}
-            >
-              Request Quotation
-            </Button>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-white/20">
-            {" "}
-            <a
-              className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
-              href="mailto:info@navkar.com"
-            >
-              <Mail className="w-5 h-5" />
-              <span className="font-medium">info@navkar.com</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
